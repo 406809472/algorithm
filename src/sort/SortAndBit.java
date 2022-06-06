@@ -3,7 +3,7 @@ package sort;
 /**
  * @author sbqstart
  * @create 2022/5/9 - 21:02
- pull test
+
  */
 public class SortAndBit {
     private static int[] arr = new int[]{4, 2, 7, 9, 4, 6, 87, 5, 45, 68, 32, 10};
