@@ -1,4 +1,4 @@
-package sort.leetcode;
+package sort.leetcode.queue;
 
 /**
  * @author sbqstart
@@ -15,6 +15,7 @@ public class queue {
 
     /**
      * 买票时间
+     *
      * @param tickets
      * @param k
      * @return
@@ -26,7 +27,7 @@ public class queue {
 
                 if (tickets[i] > 0) {
                     tickets[i]--;
-                    if (tickets[k] == 0){
+                    if (tickets[k] == 0) {
                         return total + 1;
                     }
                     total++;
@@ -37,4 +38,5 @@ public class queue {
 
         return total;
     }
+
 }
