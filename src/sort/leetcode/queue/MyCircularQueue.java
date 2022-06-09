@@ -26,15 +26,17 @@ class Node {
 class MyCircularQueue {
 
     private Node head, tail;
+    //当前队列长度
     private int count;
+    //循环队列可容纳的最大元素数量。
     private int capacity;
 
-    /** Initialize your data structure here. Set the size of the queue to be k. */
+
     public MyCircularQueue(int k) {
         this.capacity = k;
     }
 
-    /** Insert an element into the circular queue. Return true if the operation is successful. */
+
     public boolean enQueue(int value) {
         if (this.count == this.capacity)
             return false;
@@ -50,7 +52,7 @@ class MyCircularQueue {
         return true;
     }
 
-    /** Delete an element from the circular queue. Return true if the operation is successful. */
+
     public boolean deQueue() {
         if (this.count == 0)
             return false;
@@ -59,7 +61,7 @@ class MyCircularQueue {
         return true;
     }
 
-    /** Get the front item from the queue. */
+
     public int Front() {
         if (this.count == 0)
             return -1;
@@ -67,7 +69,7 @@ class MyCircularQueue {
             return this.head.value;
     }
 
-    /** Get the last item from the queue. */
+
     public int Rear() {
         if (this.count == 0)
             return -1;
@@ -75,12 +77,12 @@ class MyCircularQueue {
             return this.tail.value;
     }
 
-    /** Checks whether the circular queue is empty or not. */
+
     public boolean isEmpty() {
         return (this.count == 0);
     }
 
-    /** Checks whether the circular queue is full or not. */
+
     public boolean isFull() {
         return (this.count == this.capacity);
     }
