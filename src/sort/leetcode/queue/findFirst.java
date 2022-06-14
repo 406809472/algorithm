@@ -1,6 +1,8 @@
 package sort.leetcode.queue;
 
 import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 第一个只出现一次的字符

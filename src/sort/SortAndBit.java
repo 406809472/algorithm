@@ -9,20 +9,24 @@ public class SortAndBit {
     private static int[] arr = new int[]{4, 2, 7, 9, 4, 6, 87, 5, 45, 68, 32, 10};
 
     public static void main(String[] args) {
+        heapSort(arr);
+        for (int arrs :arr){
+            System.out.print(arrs+"    ");
+        }
 //        sortAndBit.insertionSort(arr);
 //       for (int i : arr){
 //           System.out.println(i);
 //       }
 //        int[] arr1 = new int[]{11, 11, 22, 22, 3, 3, 3, 44, 44, 44, 55, 55, 6, 6};
 //        mergeInsert(arr, 0, 11);
-        Node node1 = new Node();
-        Node node2 = new Node();
-        Node node3 = new Node();
-        Node node4 = new Node();
-        node1.left = node2;
-        node1.right = node3;
-//        node2.right = node4;
-        System.out.println(isf(node1));
+//        Node node1 = new Node();
+//        Node node2 = new Node();
+//        Node node3 = new Node();
+//        Node node4 = new Node();
+//        node1.left = node2;
+//        node1.right = node3;
+//      node2.right = node4;
+//        System.out.println(isf(node1));
 
 
     }
