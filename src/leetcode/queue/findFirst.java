@@ -1,4 +1,4 @@
-package sort.leetcode.queue;
+package leetcode.queue;
 
 import java.util.HashMap;
 import java.util.LinkedList;

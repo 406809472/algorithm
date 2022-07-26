@@ -1,4 +1,4 @@
-package sort.leetcode.queue;
+package leetcode.queue;
 
 /**
  * 无法吃到午餐学生的数量
