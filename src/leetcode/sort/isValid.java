@@ -1,5 +1,7 @@
 package leetcode.sort;
 
+import org.junit.jupiter.api.Test;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
@@ -45,5 +47,25 @@ public class isValid {
         }
         return array.length;
 
+    }
+    public int findLucky(int[] arr) {
+        int[] count = new int[arr.length];
+        for(int i = 0;i<arr.length;i++){
+            if(arr[i]<=arr.length){
+                count[arr[i]-1]++;
+            }
+        }
+        int ans = -1;
+        for(int i = 0;i<count.length;i++){
+            if(count[i] == i+1){
+                ans = count[i]>ans?count[i]:ans;
+            }
+        }
+        return ans;
+    }
+    @Test
+    public void test(){
+        int[] arr = new int[]{2,2,3,4};
+        System.out.println(findLucky(arr));
     }
 }
