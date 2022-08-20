@@ -61,7 +61,6 @@ public class isValid {
         return ans;
     }
 
-
     @Test
     public void test(){
         int[] arr = new int[]{2,2,3,4};
