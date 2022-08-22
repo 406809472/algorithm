@@ -45,7 +45,6 @@ public class isValid {
         return array.length;
 
     }
-
     public int findLucky(int[] arr) {
         int[] count = new int[arr.length];
         for (int i = 0; i < arr.length; i++) {
@@ -63,8 +62,7 @@ public class isValid {
     }
 
     /**
-     * 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。test
-     *
+     * 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。
      * @param nums
      * @param target
      * @return
