@@ -45,17 +45,18 @@ public class isValid {
         return array.length;
 
     }
+
     public int findLucky(int[] arr) {
         int[] count = new int[arr.length];
-        for(int i = 0;i<arr.length;i++){
-            if(arr[i]<=arr.length){
-                count[arr[i]-1]++;
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] <= arr.length) {
+                count[arr[i] - 1]++;
             }
         }
         int ans = -1;
-        for(int i = 0;i<count.length;i++){
-            if(count[i] == i+1){
-                ans = count[i]>ans?count[i]:ans;
+        for (int i = 0; i < count.length; i++) {
+            if (count[i] == i + 1) {
+                ans = count[i] > ans ? count[i] : ans;
             }
         }
         return ans;
@@ -63,6 +64,7 @@ public class isValid {
 
     /**
      * 给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。test
+     *
      * @param nums
      * @param target
      * @return
@@ -78,9 +80,26 @@ public class isValid {
         return new int[0];
     }
 
+    /**
+     * 给你一个整数数组 nums 。如果任一值在数组中出现 至少两次 ，返回 true ；如果数组中每个元素互不相同，返回 false 。
+     *
+     * @param nums
+     * @return
+     */
+    public boolean containsDuplicate(int[] nums) {
+        Set<Integer> set = new HashSet<Integer>();
+        for (int x : nums) {
+            if (!set.add(x)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     @Test
-    public void test(){
-        int[] arr = new int[]{2,2,3,4};
-        System.out.println(findLucky(arr));
+    public void test() {
+        int[] arr = new int[]{1, 2, 3, 1};
+        final boolean b = containsDuplicate(arr);
+        System.out.println(b);
     }
 }
