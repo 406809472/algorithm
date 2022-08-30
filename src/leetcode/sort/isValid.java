@@ -4,6 +4,8 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
+import static java.lang.Math.abs;
+
 /**
  * 有效的括号
  * 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
@@ -94,10 +96,70 @@ public class isValid {
         return false;
     }
 
+    /**
+     * 给你一个整数数组nums 和一个整数k ，判断数组中是否存在两个 不同的索引i和j ，满足 nums[i] == nums[j] 且 abs(i - j) <= k 。
+     * 如果存在，返回 true ；否则，返回 false 。
+     *滑动窗口
+     */
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashSet set = new HashSet();
+        for(int i  = 0;i<nums.length;i++){
+            if(i>k){
+                set.remove(nums[i-k-1]);
+            }
+            if(!set.add(nums[i])){
+                return true;
+            }
+        }
+        return false;
+    }
     @Test
     public void test() {
-        int[] arr = new int[]{1, 2, 3, 1};
-        final boolean b = containsDuplicate(arr);
-        System.out.println(b);
+        int[] arr = new int[]{1, 0, 1, 1};
+        System.out.println(containsNearbyDuplicate(arr, 1));
+    }
+
+    /**
+     * 给你一个包含 n 个整数nums，判断nums中是否存在三个元素 a，b，c ，使得a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+     * @param nums
+     * @return
+     */
+    public List<List<Integer>> threeSum(int[] nums){
+        List<List<Integer>> lists = new ArrayList();
+        if (nums == null || nums.length<3){
+            return lists;
+        }
+        Arrays.sort(nums);
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i]>0){
+                return lists;
+            }
+            if (i>0 &&nums[i] == nums[i-1]){
+                continue;
+            }
+            int cur = nums[i];
+            int left = i+1;
+            int right = nums.length-1;
+            while (left<right){
+                int temp =cur + nums[left] + nums[right];
+                if (temp == 0){
+                    List<Integer> list = new ArrayList();
+                    list.add(cur);
+                    list.add(nums[left]);
+                    list.add(nums[right]);
+                    lists.add(list);
+                    while (left<right && nums[left] == nums[left+1])left++;
+                    while (left<right && nums[right]==nums[right-1])right--;
+                    left++;
+                    right--;
+                }else if (temp<0){
+                    left++;
+                }
+                else {
+                    right--;
+                }
+            }
+        }
+        return lists;
     }
 }
